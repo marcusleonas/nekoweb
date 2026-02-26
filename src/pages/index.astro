@@ -1,17 +1,86 @@
 ---
+import { getCollection } from "astro:content";
+import Base from "../layouts/base.astro";
+import Webrings from "../components/home/webrings.astro";
 
+const allPosts = await getCollection("blog");
+const posts = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base>
+  <section class="box">
+    <div class="mood-box">
+      <img
+        src="https://file.garden/aXdBx1DU1BidR1It/me(1).jpg"
+        alt="pfp"
+        class="top-img"
+      />
+    </div>
+    <h1>welcome to n3bula.lol!</h1>
+    <p>
+      hello hello! welcome to my corner of the internet. i made this site to
+      have a home for some ramblings and other stuff & a place to express myself
+      online! i apologise in advance for the dump of info T-T
+    </p>
+    <p><strong>sum stuff about me:</strong></p>
+    <ul>
+      <li class="rainbow">im gay <em>(beee whoo you aree)</em></li>
+      <li>i'm from the uk, near london!</li>
+      <li>i'm 16 years old</li>
+      <li>my favourite singer is conan gray</li>
+      <li>
+        i love reading, specifically <span class="rainbow">danmei</span> novels
+      </li>
+      <li>my favourite game franchise is resident evil</li>
+      <li>
+        i re-make my basically every month hahaha <small
+          ><em>send help</em></small>
+      </li>
+      <li><a href="/about">and waaaaaaay more &rarr;</a></li>
+    </ul>
+  </section>
+  <section class="two-cols">
+    <div class="box scroll">
+      <Webrings />
+    </div>
+    <div class="box scroll">
+      <h3>current status</h3>
+      <div id="statuscafe">
+        <div id="statuscafe-username"></div><div id="statuscafe-content"></div>
+      </div><script
+        src="https://status.cafe/current-status.js?name=n3bula"
+        defer></script>
+    </div>
+  </section>
+  <section class="box">
+    <h2>latest blog posts <small><a href="/blog">(view all)</a></small></h2>
+    <ul>
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .top-img {
+    width: 180px;
+    transition: 0.2s ease;
+  }
+  .top-img:hover {
+    transform: scale(1.1);
+    rotate: 2deg;
+  }
+
+  .mood-box {
+    float: right;
+    border: solid 1px var(--border);
+    margin-left: 1rem;
+  }
+</style>

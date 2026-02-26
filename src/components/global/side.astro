@@ -1,0 +1,44 @@
+---
+const navLinks = [
+  {
+    url: "/",
+    text: "home",
+  },
+  {
+    url: "/about",
+    text: "about me",
+  },
+  {
+    url: "/blog",
+    text: "blog",
+  },
+];
+---
+
+<aside class="sidebar">
+  <div class="box">
+    <h3>navigation</h3>
+    <nav>
+      {navLinks.map((link) => <a href={link.url}>{link.text}</a>)}
+    </nav>
+  </div>
+</aside>
+
+<style>
+  .sidebar {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  nav a::before {
+    content: "★";
+    display: inline-block;
+    margin-right: 5px;
+  }
+</style>

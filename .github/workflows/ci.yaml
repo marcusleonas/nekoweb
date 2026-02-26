@@ -1,0 +1,28 @@
+name: Build and Deploy to Nekoweb
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # The checkout step copies your repo into the action runner. Important!
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install deps and build
+        run: |
+          bun i
+          bun run build
+
+      - name: Deploy to NekoWeb
+        uses: indiefellas/deploy2nekoweb@main
+        with:
+          nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
+          nekoweb-domain: "wishbone.nekoweb.org"
+          nekoweb-username: "wishbone"
+          directory: "wishbone"

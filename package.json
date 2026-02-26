@@ -9,6 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/iosevka": "^5.2.5",
+    "@fontsource/iosevka-aile": "^5.2.5",
     "astro": "^5.17.1"
   }
 }

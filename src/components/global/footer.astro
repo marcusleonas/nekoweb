@@ -1,0 +1,33 @@
+---
+import { SITE_VERSION } from "../../consts";
+---
+
+<footer>
+    <div class="ai">
+        <a href="https://notbyai.fyi/"><img src="/images/notwrittenbyai.png" alt="not written by ai - black badge"></a>
+    </div>
+    <div class="copyright">
+        <p>(c) 2022-2026 n3bula, all rights reserved.</p>
+        <p>built with <a href="https://astro.build">astro</a>, hosted on <a href="https://nekoweb.org">nekoweb</a>, made with &hearts; | v{SITE_VERSION}.</p>
+    </div>
+</footer>
+
+<style>
+    footer {
+        font-size: 12px;
+        line-height: 0.8;
+
+        color: #bebebe;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .ai img {
+        height: 31px;
+    }
+
+    .copyright {
+        text-align: right;
+    }
+</style>
