@@ -25,4 +25,4 @@ jobs:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
           nekoweb-domain: "wishbone.nekoweb.org"
           nekoweb-username: "wishbone"
-          directory: "wishbone"
+          directory: "/dist"
