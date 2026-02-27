@@ -18,7 +18,11 @@ const navLinks = [
     url: "/gallery",
     text: "photo gallery",
   },
-
+  
+  // div
+  {
+    text: "divider",
+  },
 
   // exr
   {
@@ -33,6 +37,16 @@ const navLinks = [
     url: "https://bsky.app/profile/n3bula.lol",
     text: "bsky",
   },
+
+  // div
+  {
+    text: "divider",
+  },
+
+  {
+    url: "mailto:wishbone@posteo.uk",
+    text: "email me!!"
+  }
 ];
 ---
 
@@ -40,7 +54,17 @@ const navLinks = [
   <div class="box">
     <h3>navigation</h3>
     <nav>
-      {navLinks.map((link) => <a href={link.url}>{link.text}</a>)}
+      {navLinks.map((link) => {
+        if (link.text === "divider") {
+          return (
+            <div class="divider"></div>
+          )
+        } else {
+          return (
+            <a href={link.url}>{link.text}</a>
+          )
+        }
+      })}
     </nav>
   </div>
   <div class="box">
@@ -64,5 +88,9 @@ const navLinks = [
     content: "★";
     display: inline-block;
     margin-right: 5px;
+  }
+
+  .divider {
+    padding: 4px;
   }
 </style>
