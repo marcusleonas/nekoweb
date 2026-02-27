@@ -1,0 +1,32 @@
+<input type="checkbox" id="muteRain" name="muteRain">
+<label for="muteRain">mute rain sfx</label>
+
+<script>
+    const muteRain = document.querySelector("#muteRain") as HTMLInputElement;
+
+    const storageKey = "rainMuted"
+    const storageVal = localStorage.getItem(storageKey);
+
+    const rain = new Audio("https://file.garden/aXdBx1DU1BidR1It/dragon-studio-gentle-rain-05-437316%20(1).mp3");
+    rain.loop = true;
+
+    if (!storageVal || storageVal === "false") {
+        rain.play();
+    } else {
+        muteRain.checked = true;
+    }
+
+    muteRain?.addEventListener("change", (e) => {
+        e.preventDefault();
+        const isChecked = (e.target! as HTMLInputElement).checked;
+
+        if (isChecked) {
+            localStorage.setItem(storageKey, "true");
+            rain.pause();
+        } else {
+            localStorage.setItem(storageKey, "false");
+            rain.currentTime = 0;
+            rain.play();
+        }
+    })
+</script>

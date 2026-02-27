@@ -120,11 +120,6 @@
 }
 
 /* GENERAL */
-html,
-body {
-  height: 100%;
-}
-
 html {
   background: var(--gradient-1);
 }
@@ -270,7 +265,7 @@ article {
 }
 
 .box {
-  flex: 1 0;
+  /* flex: 1 0; */
   padding: var(--padding);
   border: var(--border) 1px solid;
   background: var(--background);

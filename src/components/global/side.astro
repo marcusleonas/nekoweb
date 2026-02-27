@@ -3,6 +3,7 @@ import Updates from "./updates.astro";
 
 import { buttons } from "../../data/buttons";
 import Lastfm from "./lastfm.astro";
+import Rain from "./rain.astro";
 
 const navLinks = [
   {
@@ -76,7 +77,7 @@ const navLinks = [
   <div class="button-box">
     <marquee behavior="" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
       {buttons.map((button) => (
-        <a href={button.href}><img src={button.src} width="88" height="31" /></a>
+        <a href={button.href}><img src={button.src} width="88" height="31" class="button-img" /></a>
       ))}
     </marquee>
   </div>
@@ -90,6 +91,9 @@ const navLinks = [
     <p>created: 09/06/2022</p>
     <p>updated: <!--# updates --></p>
     <p>followers: <!--# followers --></p>
+  </div>
+  <div class="box">
+    <Rain />
   </div>
 </aside>
 
@@ -124,5 +128,13 @@ const navLinks = [
 
   .button-box marquee a {
     margin-right: 5px;
+  }
+
+  .button-img {
+    filter: grayscale(70%);
+    transition: 0.2s all ease;
+  }
+  .button-img:hover {
+    filter: grayscale(0%);
   }
 </style>
