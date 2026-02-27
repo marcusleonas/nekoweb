@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import Base from "../layouts/base.astro";
 import Webrings from "../components/home/webrings.astro";
+import Announcements from "../components/global/announcements.svelte";
 
 const allPosts = await getCollection("blog");
 const posts = allPosts
@@ -10,6 +11,7 @@ const posts = allPosts
 ---
 
 <Base>
+  <Announcements client:load />
   <section class="box">
     <div class="mood-box">
       <img
