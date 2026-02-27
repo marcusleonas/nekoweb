@@ -1,6 +1,7 @@
 ---
 title: my new year resolutions for 2026
 date: 2026-01-27T12:07:48.646Z
+description: a quick ramble about what i want to achieve in 2026.
 ---
 
 yeah yeah i know i’m a month late, but better late than never right??
@@ -15,7 +16,7 @@ i feel like this year i’m really motivated to actually stick to my resolutions
 
 without further ado, my resolutions:
 
-- be more creative! instead of continuously consuming content, i want to try making some and experimenting (hence me recreating this website and starting to update it again). i also want to get into art more!! im an abysmal artist, but im hoping to get better ❤️‍🩹 
+- be more creative! instead of continuously consuming content, i want to try making some and experimenting (hence me recreating this website and starting to update it again). i also want to get into art more!! im an abysmal artist, but im hoping to get better ❤️‍🩹
 - get back into web design - i used to really love making and maintaining websites but i’ve forgotten about it in the last year.
 - study more 🥹 ive got my exams coming up this year, and i cant keep running from things and not studying. i want to put in at least a couple of hours a week studying
 - work in my mental health & be more positive. im usually quite cynical, and i dont want to be like that anymore…
