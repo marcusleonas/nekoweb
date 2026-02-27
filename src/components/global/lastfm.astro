@@ -1,0 +1,46 @@
+<div id="lastfm"></div>
+
+<script>
+  const username = "marcusleonas";
+  const api_base = `https://lastfm-last-played.biancarosa.com.br/${username}/latest-song`;
+
+  async function getSong() {
+    const req = await fetch(api_base);
+    const json = await req.json();
+
+    const isPlaying = json.track["@attr"]?.nowplaying || false;
+
+    // if (!isPlaying) {
+    //   return;
+    // } else {
+    // }
+
+    console.log(json.track);
+
+    const el = document.querySelector("#lastfm");
+    if (!el) {
+      return;
+    }
+
+    el.innerHTML = `
+    <img src="${json.track.image[1]["#text"]}">
+    <div id="track-info">
+    <h5 id="track-name" style="font-size:1rem;"><a href="${json.track.url}">${json.track.name}</a></h5>
+    <p id="artist-name" style="font-size:0.95rem;">${json.track.artist["#text"]}</p>
+    </div>
+    `;
+  }
+
+  getSong();
+  setInterval(() => {
+    getSong();
+  }, 10000);
+</script>
+
+<style>
+    #lastfm {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+</style>

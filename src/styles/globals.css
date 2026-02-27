@@ -193,7 +193,10 @@ h6 {
 h1,
 h2,
 h3 {
-  animation: heading-glow 2s ease-in-out infinite alternate;
+  text-shadow:
+    0 0 7px var(--heading-colour),
+    0 0 21px var(--glow),
+    0 0 42px var(--glow);
 }
 
 h1::before,

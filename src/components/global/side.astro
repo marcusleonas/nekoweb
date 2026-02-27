@@ -1,6 +1,9 @@
 ---
 import Updates from "./updates.astro";
 
+import { buttons } from "../../data/buttons";
+import Lastfm from "./lastfm.astro";
+
 const navLinks = [
   {
     url: "/",
@@ -70,12 +73,33 @@ const navLinks = [
   <div class="box">
     <Updates />
   </div>
+  <div class="button-box">
+    <marquee behavior="" direction="left" onmouseover="this.stop();" onmouseout="this.start();">
+      {buttons.map((button) => (
+        <a href={button.href}><img src={button.src} width="88" height="31" /></a>
+      ))}
+    </marquee>
+  </div>
+  <div class="box">
+    <h3>last played</h3>
+    <Lastfm />
+  </div>
+  <div class="box">
+    <h3>stats</h3>
+    <p>views: <!--# views --></p>
+    <p>created: 09/06/2022</p>
+    <p>updated: <!--# updates --></p>
+    <p>followers: <!--# followers --></p>
+  </div>
 </aside>
 
 <style>
   .sidebar {
     border-radius: var(--border-radius);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   nav {
@@ -92,5 +116,13 @@ const navLinks = [
 
   .divider {
     padding: 4px;
+  }
+
+  .box {
+    flex: 0;
+  }
+
+  .button-box marquee a {
+    margin-right: 5px;
   }
 </style>

@@ -1,0 +1,40 @@
+<div id="fps">-- FPS</div>
+
+<script>
+  const display = document.getElementById("fps");
+
+  let frameCount = 0;
+  let lastTime = performance.now();
+
+  function loop(now) {
+    frameCount++;
+
+    const elapsed = now - lastTime;
+
+    if (elapsed >= 500) {
+      // update every 500 ms
+      const fps = Math.round((frameCount / elapsed) * 1000);
+      display.textContent = `${fps} FPS`;
+
+      // colour-code: green / yellow / red
+      display.style.color = fps >= 50 ? "#0f0" : fps >= 30 ? "#ff0" : "#f44";
+      display.style.borderColor = display.style.color;
+
+      frameCount = 0;
+      lastTime = now;
+    }
+
+    requestAnimationFrame(loop);
+  }
+
+  requestAnimationFrame(loop);
+</script>
+
+<style>
+  #fps {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+  }
+</style>

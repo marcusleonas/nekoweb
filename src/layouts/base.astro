@@ -1,5 +1,6 @@
 ---
 import Footer from "../components/global/footer.astro";
+import Fps from "../components/global/fps.astro";
 import Head from "../components/global/head.astro";
 import Side from "../components/global/side.astro";
 
@@ -52,6 +53,8 @@ const { title, description, image } = Astro.props;
     <Head title={title} description={description} image={image} />
   </head>
   <body>
+    <Fps />
+
     <div class="cat">
       <a href="/">
         <img src="/images/cat.png" alt="poorly drawn cat." />
@@ -67,7 +70,7 @@ const { title, description, image } = Astro.props;
       </div>
     </div>
 
-    <script src="../oneko.js" data-cat="/oneko.gif"></script>
+    <script src="/oneko.js" data-cat="/oneko.gif"></script>
   </body>
 </html>
 
