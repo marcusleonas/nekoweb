@@ -1,0 +1,79 @@
+/*!@nkb "domain":"n3bula.lol","rss":"","overflow":false,"readonly":false */
+/*
+    Don't use this file to edit your site style! Create a different CSS file for that.
+    This file defines how custom elements (like sitebox) will look like.
+    Setting CSS that breaks main nekoweb site on purpose is prohibited and may result in ban and site deletion!
+*/
+
+/* Must start with ".site-box". Change how your website will appear on main nekoweb site: https://lune.dimden.dev/405a44b7e5.png */
+.site-box {
+  text-align: center;
+
+  background: repeating-linear-gradient(
+    to bottom,
+    #0a000f 0px,
+    #0a000f 5px,
+    #100018 5px,
+    #100018 10px
+  );
+  background-size: 100% 10px;
+
+  color: #f0e6ff;
+  font-size: 12px;
+}
+
+.site-box > a > p {
+  color: #c25fff;
+  text-shadow:
+    0 0 7px #c25fff,
+    0 0 21px #7b00ff,
+    0 0 42px #7b00ff;
+  font-weight: bold;
+}
+.site-box > a > span {
+  color: #c25fff;
+  text-shadow:
+    0 0 7px #c25fff,
+    0 0 21px #7b00ff,
+    0 0 42px #7b00ff;
+}
+
+/* Style for your post box (must start with ".post-box") */
+.post-box {
+  background: repeating-linear-gradient(
+    to bottom,
+    #0a000f 0px,
+    #0a000f 5px,
+    #100018 5px,
+    #100018 10px
+  );
+  background-size: 100% 10px;
+
+  border: 1px solid #1c0040;
+  padding: 15px;
+  border-radius: 3px;
+  color: #f0e6ff;
+  font-weight: normal;
+}
+
+.post-box .post-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #c25fff;
+  text-shadow:
+    0 0 7px #c25fff,
+    0 0 21px #7b00ff,
+    0 0 42px #7b00ff;
+}
+
+.post-box .post-author,
+.post-box .post-dot,
+.post-box .post-date {
+  color: #7b00ff;
+  text-shadow:
+    0 0 7px #c25fff,
+    0 0 21px #7b00ff,
+    0 0 42px #7b00ff;
+}

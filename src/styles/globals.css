@@ -134,7 +134,7 @@ body {
     var(--gradient-2) 5px,
     var(--gradient-2) 10px
   );
-  background-size: 100% 10px; /* one stripe cycle = 80px tall */
+  background-size: 100% 10px;
   animation: bganim 1s linear infinite;
 
   color: var(--foreground);
