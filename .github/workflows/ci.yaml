@@ -23,6 +23,6 @@ jobs:
         uses: indiefellas/deploy2nekoweb@main
         with:
           nekoweb-api-key: ${{ secrets.NEKOWEB_API_KEY }}
-          nekoweb-domain: "wishbone.nekoweb.org"
+          nekoweb-domain: "n3bula.lol"
           nekoweb-username: "wishbone"
           directory: "/dist"
