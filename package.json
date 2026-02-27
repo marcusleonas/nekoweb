@@ -10,8 +10,11 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.15",
+    "@astrojs/svelte": "^7.2.5",
     "@fontsource/iosevka": "^5.2.5",
     "@fontsource/iosevka-aile": "^5.2.5",
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "svelte": "^5.53.5",
+    "typescript": "^5.9.3"
   }
 }
