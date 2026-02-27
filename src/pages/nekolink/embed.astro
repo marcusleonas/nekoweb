@@ -1,0 +1,78 @@
+---
+import { nekolinks } from "./links";
+import "@fontsource/iosevka";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nekolink v2</title>
+  </head>
+  <body id="img">
+    <div class="wm">
+      <a href="https://n3bula.lol/nekolink">nekolink v2</a>
+    </div>
+
+    <a href="" id="link"></a>
+
+    <script>
+      import { nekolinks } from "./links";
+
+      function setImage() {
+        const totalSites = nekolinks.length;
+
+        const imgEl = document.querySelector("#img") as HTMLElement;
+        const linkEl = document.querySelector("#link") as HTMLAnchorElement;
+
+        if (!imgEl || !linkEl) {
+          return;
+        }
+
+        const randomSite = nekolinks[Math.floor(totalSites * Math.random())];
+
+        imgEl.style.backgroundImage = `url("${randomSite.img}")`;
+        linkEl.href = randomSite.href;
+
+        setTimeout(setImage, 15000);
+      }
+      setImage();
+    </script>
+    <style>
+      html {
+        height: 100%;
+      }
+      #img {
+        margin: 0px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: white;
+      }
+      #link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .wm {
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 1px 2px;
+        background-color: lightgray;
+        border-bottom-left-radius: 4px;
+        font-size: 14px;
+        border-left: 1px solid black;
+        border-bottom: 1px solid black;
+      }
+      .wm a {
+        text-decoration: none;
+        color: black;
+        font-family: "Iosevka", monospace;
+      }
+    </style>
+  </body>
+</html>
