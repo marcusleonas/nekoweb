@@ -1,31 +1,57 @@
+---
+const updates: { date: string; msg: string }[] = [
+  {
+    date: "29/01/2026",
+    msg: "major website update! changes styles, layout, etc. also made the website work better on mobile.",
+  },
+  {
+    date: "30/01/2026",
+    msg: "add shrine to <a href='/shrines/flins'>flins</a> from genshin impact",
+  },
+  {
+    date: "31/01/2026",
+    msg: "created my own cliques, created trinkets page for collecting buttons, stamps, blinkies, etc. Also a added poll to the home page.",
+  },
+  {
+    date: "26/02/2026",
+    msg: "yes yes new website xoxo!",
+  },
+  {
+    date: "08/03/2026",
+    msg: "some bug fixes... and a new <a href='/resources'>resources</a> page! ",
+  },
+];
+---
+
 <h3>updates</h3>
-<div class="scroll" style="--sb-height: 100px;">
-  <p>[26/02/2026] yes yes new website xoxo!</p>
-  <hr>
-  <p>
-    [31/01/2026]: created my <a href="https://storybook.n3bula.lol">storybook</a
-    >, added a link to it here.
-  </p>
-  <hr />
-  <p>
-    [30/01/2026 - AFTERNOON]: created my own cliques, created trinkets page for
-    collecting buttons, stamps, blinkies, etc. Also a added poll to the home
-    page.
-  </p>
-  <hr />
-  <p>
-    [30/01/2026 - MORNING]: add shrine to <a href="/shrines/flins">flins</a> from
-    genshin impact
-  </p>
-  <hr />
-  <p>
-    [29/01/2026]: major website update! changes styles, layout, etc. also made
-    the website work better on mobile.
-  </p>
+<div class="scroll" style="--sb-height: 120px;">
+  {
+    updates.reverse().map((update) => (
+      <div class="update">
+        <p class="update-date">[{update.date}]</p>
+        <p class="update-msg" set:html={update.msg} />
+      </div>
+    ))
+  }
 </div>
 
 <style>
-  p {
+  div {
     font-size: 14px;
+  }
+</style>
+
+<style is:global>
+  .update {
+    padding: 0 0 10px 0;
+  }
+  .update .update-date {
+    padding: 2px;
+    background: #c25fff;
+    color: #0a000f;
+    text-align: center;
+  }
+  .update .update-msg {
+    padding: 4px 0 0 0;
   }
 </style>
