@@ -27,7 +27,7 @@ export async function getStats(domain: string) {
     if (createdAtEl) createdAtEl.innerHTML = createdAt;
     if (updatedAtEl) updatedAtEl.innerHTML = updatedAt;
   } catch (error) {
-    console.error("something went wrong");
+    console.error("something went wrong", error);
     if (viewsEl) viewsEl.innerHTML = "please refresh the page";
     if (followersEl) followersEl.innerHTML = "please refresh the page";
     if (createdAtEl) createdAtEl.innerHTML = "please refresh the page";
