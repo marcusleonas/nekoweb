@@ -39,6 +39,13 @@ interface APIResponse {
 }
 ```
 
+```html
+<p>views: <span id="sitestats-views">loading...</span></p>
+<p>followers: <span id="sitestats-followers">loading...</span></p>
+<p>created: <span id="sitestats-created">loading...</span></p>
+<p>updated: <span id="sitestats-updated">loading...</span></p>
+```
+
 ## usage
 
 NOTE: for vanilla js, remove all the types (the interface at the bottom, and the ": string" after some variables)!!

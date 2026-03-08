@@ -288,6 +288,7 @@ article {
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
+  max-height: 5px;
 }
 
 /* Track */
