@@ -103,10 +103,10 @@ const navLinks = [
   </div>
   <div class="box">
     <h3>stats</h3>
-    <p>views: <!--# views --></p>
-    <p>created: 09/06/2022</p>
-    <p>updated: <!--# updates --></p>
-    <p>followers: <!--# followers --></p>
+    <p>views: <span id="sitestats-views"></span></p>
+    <p>followers: <span id="sitestats-followers"></span></p>
+    <p>created: <span id="sitestats-created"></span></p>
+    <p>updated: <span id="sitestats-updated"></span></p>
   </div>
   <div class="box">
     <Rain />
@@ -154,3 +154,9 @@ const navLinks = [
     filter: grayscale(0%);
   }
 </style>
+
+<script>
+import { getStats } from "../../js/getStats";
+
+  await getStats("n3bula.lol"); 
+</script>
