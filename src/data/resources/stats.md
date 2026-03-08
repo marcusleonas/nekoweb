@@ -1,5 +1,5 @@
 ---
-title: nekoweb stats - typescript
+title: nekoweb stats
 category: script
 date: 2026-03-08
 ---
