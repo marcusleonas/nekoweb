@@ -9,4 +9,14 @@ const blog = defineCollection({
     description: z.string(),
   }),
 });
-export const collections = { blog };
+
+const resources = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/data/resources" }),
+  schema: z.object({
+    title: z.string(),
+    date: z.date(),
+    category: z.enum(["script", "style"]),
+  }),
+});
+
+export const collections = { blog, resources };

@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/base.astro";
+
+const posts = (await getCollection("resources")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const stylePosts = posts.filter((post) => post.data.category === "style");
+const scriptPosts = posts.filter((post) => post.data.category === "script");
+---
+
+<Base title="resources">
+  <section class="box">
+    <h1>resources</h1>
+    <p>
+      below are some cool snippets of css/js. feel free to use them on your
+      website!
+    </p>
+  </section>
+
+  {
+    stylePosts.length > 0 && (
+      <section class="box">
+        <h2>styles</h2>
+        <ul>
+          {stylePosts.map((post) => (
+            <li>
+              <a href={`/resources/${post.id}`}>{post.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {
+    scriptPosts.length > 0 && (
+      <section class="box">
+        <h2>scripts</h2>
+        <ul>
+          {scriptPosts.map((post) => (
+            <li>
+              <a href={`/resources/${post.id}`}>{post.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</Base>

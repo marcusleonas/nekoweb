@@ -335,3 +335,8 @@ article {
     background-position: 100% 0;
   }
 }
+
+pre {
+  font-family: "Iosevka", monospace;
+  padding: 10px;
+}
