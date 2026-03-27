@@ -1,9 +1,10 @@
 ---
 import Name from "~/components/name.svelte";
+import Webrings from "~/components/webrings.astro";
 import Base from "~/layouts/base.astro";
 ---
 
-<Base>
+<Base seo={{ title: "Home - n3bula.lol" }}>
   <div class="container">
     <div class="container-title">
       <p>welcome</p>
@@ -31,19 +32,8 @@ import Base from "~/layouts/base.astro";
         <p>webrings</p>
       </div>
       <div class="content">
-        <div class="scroll-box" style="--h: 150px;">
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
-          <p>asdasd</p>
+        <div class="scroll-box" style="--h: 125px;">
+          <Webrings />
         </div>
       </div>
     </div>
