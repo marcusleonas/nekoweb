@@ -2,7 +2,8 @@
 import "~/styles/reset.css";
 import "~/styles/style.css";
 
-import Head from "../components/global/head.astro";
+import Head from "~/components/global/head.astro";
+import NameSetter from "~/components/name-setter.svelte";
 ---
 
 <html lang="en">
@@ -11,7 +12,11 @@ import Head from "../components/global/head.astro";
   </head>
   <body>
     <div class="wrapper">
-      <img src="/pics/umbrella-logo.png" alt="umbrella logo" />
+      <img
+        src="/pics/umbrella-logo.png"
+        alt="umbrella logo"
+        style="margin: 0 auto;"
+      />
       <div class="container">
         <div class="container-title">
           <p>WARNING - PLEASE READ</p>
@@ -35,12 +40,14 @@ import Head from "../components/global/head.astro";
             acknowledge these risks and accept full responsibility for your
             continued exposure.
           </p>
-          <p>
-            <strong
-              ><em>If you wish to proceed, <a href="/home">Click Here</a>.</em
-              ></strong
-            >
-          </p>
+          <h2>Please enter your details below to enter.</h2>
+          <NameSetter client:load />
+          <small
+            ><em
+              >(Note: This is stored as a cookie and used throughout the site.
+              No data is sent to a server.)</em
+            ></small
+          >
         </div>
       </div>
       <footer class="footer">

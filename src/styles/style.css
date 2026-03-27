@@ -32,6 +32,18 @@ a:hover {
   text-decoration: underline;
 }
 
+h1 {
+  padding-bottom: 6px;
+}
+
+h2 {
+  padding: 6px 0;
+}
+
+p {
+  padding: 6px 0;
+}
+
 /****** GENERAL *****************************************/
 
 body {
@@ -91,6 +103,7 @@ body {
 
 .container .container-title p {
   line-height: 1;
+  padding: 0;
 }
 
 .wrapper .container .content {

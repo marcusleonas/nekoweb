@@ -1,4 +1,5 @@
 ---
+import Name from "~/components/name.svelte";
 import Base from "~/layouts/base.astro";
 ---
 
@@ -8,7 +9,7 @@ import Base from "~/layouts/base.astro";
       <p>welcome</p>
     </div>
     <div class="content">
-      <h1>Identity Confirmed. Welcome.</h1>
+      <h1>Identity Confirmed. Welcome, <Name client:only />.</h1>
     </div>
   </div>
 </Base>
