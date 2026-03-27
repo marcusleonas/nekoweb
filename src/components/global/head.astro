@@ -1,6 +1,4 @@
 ---
-import { ClientRouter } from "astro:transitions";
-
 export interface HeadProps {
   title?: string;
   description?: string;
@@ -53,6 +51,3 @@ const { title, description, author } = Astro.props;
 
 <!-- Default stuff -->
 <title>{title ?? defaultTitle}</title>
-
-<!-- Client Router (for fancy view transitions) -->
-<ClientRouter />

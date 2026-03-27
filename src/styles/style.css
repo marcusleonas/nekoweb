@@ -23,6 +23,10 @@
 
 /****** OVERWRITES **************************************/
 
+html {
+  background: hsl(249, 14%, 10%);
+}
+
 a {
   color: var(--linkfg);
   text-decoration: none;
@@ -63,6 +67,8 @@ body {
   background: url(/pics/num.gif);
   background-repeat: repeat;
   background-size: 104px 104px;
+
+  min-height: 100vh;
 }
 
 .wrapper {
