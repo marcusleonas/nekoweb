@@ -2,24 +2,25 @@
   <img
     src="/pics/umbrella.gif"
     alt="spinning umbrella logo"
-    class="umbrella-left"
-    id="umbrella"
+    class="umbrella-left umbrella"
   />
   <a href="/home" class="site-title">n3bula.lol</a>
   <img
     src="/pics/umbrella.gif"
     alt="spinning umbrella logo"
-    class="umbrella-right"
-    id="umbrella"
+    class="umbrella-right umbrella"
   />
 </header>
 
 <script lang="ts">
-  const btn = document.querySelector("#umbrella");
+  const btns = document.querySelectorAll(".umbrella");
   const audio = new Audio("/audio/7burgers.mp3");
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    audio.currentTime = 0;
-    audio.play();
+
+  btns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      audio.currentTime = 0;
+      audio.play();
+    });
   });
 </script>

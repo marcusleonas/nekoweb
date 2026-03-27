@@ -11,7 +11,7 @@
   --ff: "w95", system-ui;
   --max-w: 700px;
 
-  --fg: hsl(240, 12%, 78%);
+  --fg: hsl(240, 13%, 78%);
   --grey: hsl(240, 8%, 55%);
   --dark-grey: hsl(249, 10%, 13%);
   --cbg: hsla(249, 14%, 10%, 0.616);
@@ -42,6 +42,10 @@ h2 {
 
 p {
   padding: 6px 0;
+}
+
+ul {
+  list-style: inside;
 }
 
 /****** GENERAL *****************************************/
@@ -114,7 +118,8 @@ body {
   padding: var(--p);
 }
 
-.side {
+.side,
+main {
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -159,4 +164,24 @@ body {
   text-align: center;
   padding: 12px 0;
   font-size: 12px;
+}
+
+.two-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.ls-none {
+  list-style: none;
+  padding: 0;
+}
+
+.scroll-box {
+  max-height: var(--h, 200px);
+  overflow-y: auto;
 }
