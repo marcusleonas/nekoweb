@@ -1,0 +1,149 @@
+/****** FONTS *******************************************/
+@font-face {
+  font-family: "w95";
+  src:
+    url("/fonts/w95fa.woff") format("woff"),
+    url("/fonts/w95fa.woff2") format("woff2");
+}
+
+/****** VARIABLES ***************************************/
+:root {
+  --ff: "w95", system-ui;
+  --max-w: 700px;
+
+  --fg: hsl(240, 12%, 78%);
+  --grey: hsl(240, 8%, 55%);
+  --dark-grey: hsl(249, 10%, 13%);
+  --cbg: hsla(249, 14%, 10%, 0.616);
+
+  --linkfg: hsl(240, 67%, 80%);
+
+  --grey-gradient: linear-gradient(180deg, var(--fg), var(--grey));
+}
+
+/****** OVERWRITES **************************************/
+
+a {
+  color: var(--linkfg);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/****** GENERAL *****************************************/
+
+body {
+  font-family: var(--ff);
+  font-size: 14px;
+
+  color: var(--fg);
+
+  background: url(/pics/num.gif);
+  background-repeat: repeat;
+  background-size: 104px 104px;
+}
+
+.wrapper {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 30px 0 0 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 6px;
+}
+
+.header {
+  background: url(/pics/banner.png);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 150px; */
+  padding: 24px 12px;
+  margin-bottom: 6px;
+}
+
+.header .site-title {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 2px 8px;
+  backdrop-filter: blur(4px);
+  background: var(--cbg);
+}
+
+.umbrella-left,
+.umbrella-right {
+  width: 50px;
+  height: auto;
+}
+
+.container .container-title {
+  background: var(--grey-gradient);
+  color: var(--dark-grey);
+  width: max-content;
+  padding: 2px 6px;
+}
+
+.container .container-title p {
+  line-height: 1;
+}
+
+.wrapper .container .content {
+  background: var(--cbg);
+  backdrop-filter: blur(2px);
+
+  --p: 6px;
+  padding: var(--p);
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.side .links,
+.side .links details .sub-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.side .links .link,
+.side .links details summary {
+  padding: 4px 6px;
+  background: linear-gradient(180deg, #32303b, #1e1d25);
+  border-top: var(--grey) 1px solid;
+  transition: 0.5s ease;
+}
+
+.side .links .link:first-child {
+  border-top: 0px;
+}
+
+.side .links .link:hover {
+  padding-left: 12px;
+}
+
+.side .links details summary {
+  color: var(--linkfg);
+  cursor: pointer;
+}
+
+.side .links details summary:hover {
+  text-decoration: underline;
+}
+
+.side .links details .sub-links {
+  margin-left: 8px;
+}
+
+.footer {
+  text-align: center;
+  padding: 12px 0;
+  font-size: 12px;
+}

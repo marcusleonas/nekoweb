@@ -1,0 +1,47 @@
+---
+import "~/styles/reset.css";
+import "~/styles/style.css";
+
+import type { HeadProps } from "../components/global/head.astro";
+import Head from "../components/global/head.astro";
+import Header from "~/components/global/header.astro";
+import Side from "~/components/global/side.astro";
+
+interface Props {
+  seo?: HeadProps;
+}
+const props = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <Head {...props.seo} />
+  </head>
+  <body>
+    <div class="wrapper">
+      <Header />
+      <div class="grid">
+        <Side />
+        <main>
+          <slot />
+        </main>
+      </div>
+      <footer class="footer">
+        <div class="marquee">
+          <p>
+            (c) 2022-2026 || Licensed under <a
+              href="https://creativecommons.org/licenses/by-nd/4.0/">CC BY-ND</a
+            > || <a href="https://github.com/marcusleonas/nekoweb"
+              >View Source</a
+            >
+          </p>
+          <p>
+            Hosted on <a href="https://nekoweb.org">Nekoweb</a>, built with <a
+              href="https://astro.build">Astro</a
+            >, made with &hearts;.
+          </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

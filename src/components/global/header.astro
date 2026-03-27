@@ -1,0 +1,25 @@
+<header class="header">
+  <img
+    src="/pics/umbrella.gif"
+    alt="spinning umbrella logo"
+    class="umbrella-left"
+    id="umbrella"
+  />
+  <a href="/home" class="site-title">n3bula.lol</a>
+  <img
+    src="/pics/umbrella.gif"
+    alt="spinning umbrella logo"
+    class="umbrella-right"
+    id="umbrella"
+  />
+</header>
+
+<script lang="ts">
+  const btn = document.querySelector("#umbrella");
+  const audio = new Audio("/audio/7burgers.mp3");
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    audio.currentTime = 0;
+    audio.play();
+  });
+</script>

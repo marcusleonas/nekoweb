@@ -1,0 +1,58 @@
+---
+import { ClientRouter } from "astro:transitions";
+
+export interface HeadProps {
+  title?: string;
+  description?: string;
+  author?: string;
+}
+
+type Props = HeadProps;
+
+const defaultTitle = "n3bula.lol - website seised by umbrella";
+const defaultDesc =
+  "My Resident-Evil themed personal site. Watch out for the the T-Virus!";
+const defaultAuthor = "Marcus Harvey";
+
+const ogUrl = `https://n3bula.lol${Astro.url.pathname}`;
+
+const { title, description, author } = Astro.props;
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- General Meta Tags -->
+<meta name="description" content={description ?? defaultDesc} />
+<meta name="author" content={author ?? defaultAuthor} />
+
+<meta property="og:title" content={title ?? defaultTitle} />
+<meta property="og:description" content={description ?? defaultDesc} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://n3bula.lol/og.png" />
+<meta property="og:url" content={ogUrl} />
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title ?? defaultTitle} />
+<meta name="twitter:description" content={description ?? defaultDesc} />
+<meta name="twitter:image" content="https://n3bula.lol/og.png" />
+
+<!-- Fediverse -->
+<link rel="me" href="https://indieweb.social/@mlh" />
+<meta name="fediverse:creator" content="@mlh@indieweb.social" />
+
+<!-- Get rid of those pesky ai hopefully... -->
+<meta name="robots" content="noai, noimageai" />
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Favicon -->
+<link rel="icon" href="/pics/favicon.png" />
+
+<!-- Default stuff -->
+<title>{title ?? defaultTitle}</title>
+
+<!-- Client Router (for fancy view transitions) -->
+<ClientRouter />
