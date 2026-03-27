@@ -1,3 +1,43 @@
+---
+const links: Link[] = [
+  {
+    title: "Home",
+    href: "/home",
+  },
+  {
+    title: "About",
+    href: "/about",
+  },
+  {
+    title: "Contact",
+    href: "/contact",
+  },
+  {
+    title: "Contact",
+    sublinks: [
+      {
+        title: "sum inner link",
+        href: "/test",
+      },
+    ],
+  },
+];
+
+interface BaseLink {
+  title: string;
+}
+
+interface LinkItem extends BaseLink {
+  href: string;
+}
+
+interface LinkGroup extends BaseLink {
+  sublinks: LinkItem[];
+}
+
+type Link = LinkItem | LinkGroup;
+---
+
 <aside class="side">
   <div class="container">
     <div class="container-title">
@@ -5,15 +45,26 @@
     </div>
     <div class="content">
       <div class="links">
-        <a href="/home" class="link">home</a>
-        <a href="/about" class="link">about</a>
-        <a href="/contact" class="link">contact</a>
-        <details>
-          <summary>site stuff</summary>
-          <div class="sub-links">
-            <a href="#" class="link">inner link</a>
-          </div>
-        </details>
+        {
+          links.map((link) =>
+            "sublinks" in link ? (
+              <details>
+                <summary>{link.title}</summary>
+                <div class="sub-links">
+                  {link.sublinks.map((sublink) => (
+                    <a href={sublink.href} class="link">
+                      {sublink.title}
+                    </a>
+                  ))}
+                </div>
+              </details>
+            ) : (
+              <a href={link.href} class="link">
+                {link.title}
+              </a>
+            ),
+          )
+        }
       </div>
     </div>
   </div>
