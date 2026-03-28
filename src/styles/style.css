@@ -16,7 +16,7 @@
   --dark-grey: hsl(249, 10%, 13%);
   --cbg: hsla(249, 14%, 10%, 0.616);
 
-  --linkfg: hsl(240, 67%, 80%);
+  --accent: hsl(240, 67%, 80%);
 
   --grey-gradient: linear-gradient(180deg, var(--fg), var(--grey));
 }
@@ -28,7 +28,7 @@ html {
 }
 
 a {
-  color: var(--linkfg);
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -53,7 +53,7 @@ ul {
 }
 
 hr {
-  border-color: var(--linkfg);
+  border-color: var(--accent);
 }
 
 /****** GENERAL *****************************************/
@@ -75,6 +75,7 @@ body {
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 30px 0 0 0;
+  position: relative;
 }
 
 .grid {
@@ -158,7 +159,7 @@ main {
 }
 
 .side .links details summary {
-  color: var(--linkfg);
+  color: var(--accent);
   cursor: pointer;
 }
 
@@ -198,4 +199,25 @@ main {
 .scroll-box {
   max-height: var(--h, 200px);
   overflow-y: auto;
+}
+
+.flash-red {
+  color: red;
+  animation: flash-red 2s ease-in-out infinite;
+}
+
+@keyframes flash-red {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 0px transparent;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 8px oklch(62.365% 0.25371 26.331);
+  }
+}
+
+.colour-accent {
+  color: var(--accent);
 }

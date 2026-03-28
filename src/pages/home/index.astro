@@ -43,12 +43,12 @@ import Base from "~/layouts/base.astro";
       </div>
       <div class="content">
         <ul class="ls-none">
-          <li><strong class="fp">Age:</strong> 16</li>
-          <li><strong class="fp">Gender:</strong> Male</li>
-          <li><strong class="fp">Sexuality:</strong> Gay</li>
-          <li><strong class="fp">Country:</strong> England</li>
+          <li><strong class="colour-accent">Age:</strong> 16</li>
+          <li><strong class="colour-accent">Gender:</strong> Male</li>
+          <li><strong class="colour-accent">Sexuality:</strong> Gay</li>
+          <li><strong class="colour-accent">Country:</strong> England</li>
           <li>
-            <strong class="fp">Mood:</strong>
+            <strong class="colour-accent">Mood:</strong>
             <a href="https://www.imood.com/users/wishbone">
               <img
                 src="https://moods.imood.com/display/uname-wishbone/fg-c0c0ce/trans-1/imood.gif"
@@ -62,4 +62,19 @@ import Base from "~/layouts/base.astro";
       </div>
     </div>
   </div>
+
+  <img
+    src="/pics/leon.png"
+    alt="picture of leon scott kennedy from RE4 (Original) holding a gun"
+    class="leon"
+  />
 </Base>
+
+<style>
+  .leon {
+    position: absolute;
+    top: 120px;
+    right: -170px;
+    height: 400px;
+  }
+</style>

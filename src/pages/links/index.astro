@@ -1,0 +1,160 @@
+---
+import Base from "~/layouts/base.astro";
+
+const links: Link[] = [
+  {
+    img: "https://file.garden/ZrZSgsrYfQXsO7QH/buttons/lockheartlove_button.png",
+    href: "https://lockheart.love",
+    category: "neighbour",
+  },
+  {
+    img: "https://sakuradreams.neocities.org/SakuraDreams01.gif",
+    href: "https://sakuradreams.neocities.org",
+    category: "neighbour",
+  },
+  {
+    img: "/btns/ventablack.png",
+    href: "https://ventablack.neocities.org",
+    category: "neighbour",
+  },
+  {
+    img: "https://404city.neocities.org/btn.gif",
+    href: "https://404city.neocities.org/",
+    category: "neighbour",
+  },
+  {
+    img: "/btns/snailstown.gif",
+    href: "https://snails.town",
+    category: "neighbour",
+  },
+  {
+    img: "https://files.catbox.moe/md67bd.png",
+    href: "https://bachira.neocities.org",
+    category: "neighbour",
+  },
+  {
+    img: "https://rhinedottir.neocities.org/rhinedottir_button.png",
+    href: "https://rhinedottir.neocities.org",
+    category: "neighbour",
+  },
+  {
+    img: "https://file.garden/Z38yn5JN2nXAbi-Q/site/ezgif.com-animated-gif-maker.gif",
+    href: "https://fishshrine.neocities.org/",
+    category: "neighbour",
+  },
+];
+
+interface Link {
+  img?: string;
+  text?: string;
+  href: string;
+  category: "neighbour" | "other";
+}
+---
+
+<Base seo={{ title: "Links - n3bula.lol" }}>
+  <div class="container">
+    <div class="container-title"><p>socials</p></div>
+    <div class="content">
+      <p>Feel free to contact me using any of the methods below.</p>
+      <div class="two-cols">
+        <div>
+          <p>col1</p>
+        </div>
+        <div class="div">
+          <p>col2</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="container-title"><p>add me</p></div>
+    <div class="content">
+      <p>
+        Feel free to hotlink, I like being able to change my button at any
+        time!! Let me know if you add me so I can return the favour &lt;3
+      </p>
+      <div class="two-cols">
+        <div>
+          <img src="/88x31.gif" />
+          <textarea style="resize:none;"
+            >{
+              `<a target="_blank" href="https://n3bula.lol"><img src="https://n3bula.lol/88x31.gif" /></a>`
+            }</textarea
+          >
+        </div>
+
+        <div>
+          <img src="/32x32.gif" />
+          <textarea style="resize:none;"
+            >{
+              `<a target="_blank" href="https://n3bula.lol"><img src="https://n3bula.lol/32x32.gif" /></a>`
+            }</textarea
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="container-title"><p>wall</p></div>
+    <div class="content">
+      <p>Moots/friends/sites I think are cool!</p>
+      <div class="button-grid">
+        {
+          links
+            .filter((l) => l.category === "neighbour" && l.img)
+            .map((link) => (
+              <a href={link.href} class="button" target="_blank">
+                <img src={link.img} width="88" height="31" />
+              </a>
+            ))
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="container-title"><p>ads</p></div>
+    <div class="content">
+      <iframe
+        style="border:none"
+        src="https://nvlk.dimden.dev/"
+        width="175"
+        height="175"
+        name="neolink"></iframe>
+      <iframe
+        style="border:none"
+        src="https://evehibi.nekoweb.org/ringlink/"
+        name="ringlink"
+        width="175"
+        height="175"></iframe>
+      <iframe
+        style="border:none"
+        src="https://bang1338.nekoweb.org/neko.html"
+        width="175"
+        height="175"></iframe>
+      <iframe
+        src="https://john.citrons.xyz/embed?ref=n3bula.lol"
+        style="margin-left:auto;display:block;margin-right:auto;max-width:732px;width:100%;height:70px;border:none;"
+      ></iframe>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .button-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .button-grid .button {
+    max-width: max-content;
+    transition: 0.5s ease;
+  }
+
+  .button-grid .button:hover {
+    transform: scale(1.1) rotate(-2deg);
+  }
+</style>
