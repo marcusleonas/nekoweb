@@ -1,0 +1,27 @@
+---
+import Base from "~/layouts/base.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("resources")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base seo={{ title: "Resources - n3bula.lol" }}>
+  <div class="container">
+    <div class="container-title"><p>resources</p></div>
+    <div class="content">
+      <div class="list">
+        {
+          posts.map((post) => (
+            <div>
+              <a href={`/resources/${post.id}`} style="padding:0">
+                {post.data.title}
+              </a>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Base>

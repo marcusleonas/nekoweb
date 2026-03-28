@@ -1,0 +1,36 @@
+---
+import { getCollection, getEntry, render } from "astro:content";
+import Base from "~/layouts/base.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("resources");
+  return posts.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+---
+
+<Base seo={{ title: `${entry.data.title} - n3bula.lol` }}>
+  <div class="container">
+    <div class="container-title"><p>meta</p></div>
+    <div class="content">
+      <h1 style="padding:0;">{entry.data.title}</h1>
+      <p style="padding:0;">
+        <a style="padding:0;" href="/resources">Go Back</a> || Date posted: {
+          new Date(entry.data.date).toLocaleDateString("en-GB")
+        }
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="container-title"><p>post</p></div>
+    <div class="content">
+      <Content />
+    </div>
+  </div>
+</Base>

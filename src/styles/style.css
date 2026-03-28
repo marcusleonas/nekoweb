@@ -103,10 +103,10 @@ body {
   background: var(--cbg);
 }
 
-.umbrella-left,
-.umbrella-right {
+.umbrella {
   width: 50px;
   height: auto;
+  cursor: pointer;
 }
 
 .container .container-title {
@@ -221,4 +221,15 @@ main {
 
 .colour-accent {
   color: var(--accent);
+}
+
+.astro-code {
+  padding: 12px;
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+.astro-code code {
+  font-family: "JetBrains Mono Variable", monospace;
+  user-select: all;
 }

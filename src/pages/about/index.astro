@@ -1,4 +1,5 @@
 ---
+import Listening from "~/components/listening.svelte";
 import Base from "~/layouts/base.astro";
 ---
 
@@ -19,8 +20,9 @@ import Base from "~/layouts/base.astro";
         lot easier. My site is open source and is available on GitHub.
       </p>
       <p>
-        The font used for most text on this site is Host Grotesk. For any code
-        blocks/snippets, the font used is JetBrains Mono.
+        The font used for most text on this site is <a
+          href="https://www.dafont.com/w95fa.font">W95FA</a
+        >. For any code blocks/snippets, the font used is JetBrains Mono.
       </p>
       <p>
         Go is another language in my belt, usually my go-to for desktop & local
@@ -49,6 +51,53 @@ import Base from "~/layouts/base.astro";
         to break. I read a lot of novels as well, primarily danmei but also
         other genres if something catches my eye.
       </p>
+    </div>
+  </div>
+
+  <div class="two-cols">
+    <div class="container">
+      <div class="container-title"><p>interests</p></div>
+      <div class="content">
+        <ul class="ls-none">
+          <li>
+            <strong class="colour-accent">Games:</strong> Resident Evil, Roblox, Genshin
+            Impact, Dead by Daylight
+          </li>
+          <li>
+            <strong class="colour-accent"
+              ><a href="https://last.fm/user/marcusleonas">Music:</a></strong
+            > Conan Gray, Charli XCX, Kim Petras, Caroline Polachek, Chappell Roan
+          </li>
+          <li>
+            <strong class="colour-accent">Books:</strong> Heaven Official's Blessing,
+            Run Wild Sa Ye, Wuthering Heights, etc.
+          </li>
+          <li>
+            <strong class="colour-accent">Movies/TV:</strong> Heated Rivalry, Young
+            Royals, Given, Amelie, Strangers by the Shore
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="container">
+        <div class="container-title"><p>status</p></div>
+        <div class="content">
+          <div id="statuscafe">
+            <div id="statuscafe-username"></div><div id="statuscafe-content">
+              Loading...
+            </div>
+          </div><script
+            src="https://status.cafe/current-status.js?name=n3bula"
+            defer></script>
+        </div>
+      </div>
+      <div class="container">
+        <div class="container-title"><p>listening to</p></div>
+        <div class="content">
+          <Listening client:load />
+        </div>
+      </div>
     </div>
   </div>
 </Base>
