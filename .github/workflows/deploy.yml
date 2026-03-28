@@ -19,8 +19,18 @@ jobs:
       # The checkout step copies your repo into the action runner. Important!
       - uses: actions/checkout@v4
 
-      - name: Install, build, and upload your site
-        uses: withastro/action@v5
+    #   - name: Install, build, and upload your site
+    #     uses: withastro/action@v5
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+            bun-version: latest
+    
+      - name: Install deps
+        run: bun install
+
+      - name: Build project
+        run: bun run build
 
       - name: Deploy to NekoWeb
         uses: indiefellas/deploy2nekoweb@main
